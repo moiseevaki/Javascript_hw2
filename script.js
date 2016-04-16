@@ -6,23 +6,22 @@
 //Если нет совпадения, то есть введенное имя пользователя не существует в массиве - выдавать с помощью alert сообщение об ошибке
 //Если есть совпадение - выводить сообщение "Андрей, вы успешно вошли". Вместо "Андрей" должно быть имя текущего пользователя
 
-var i = 0;
-var arr = [];
-arr[0] = prompt ('Введите имя');
-arr[1] = prompt ('Введите имя');
-arr[2] = prompt ('Введите имя');
-arr[3] = prompt ('Введите имя');
-arr[4] = prompt ('Введите имя');
-arr.length = 5;
-var name;
-console.log (arr);
-name = prompt ('Введите свое имя');
+var arrName = []; 
+var login;
 
-for (var i = 0; i < 5; i++) {
-	if (name == arr[i]) {
-		alert (name + ', Вы успешно вошли');
-		break;
-		} else {
-		alert('Ошибка')
-		}
-	}
+for (var i = 0; i < 5; i++) { 
+	arrName[i] = prompt('Введите ' + (i + 1) + '-ое имя'); 
+} 
+
+console.log('Авторизированные пользователи: ', arrName);
+
+login = prompt('Введите имя пользователя'); 
+
+for (var i = 0; i < arrName.length; i++) { 
+	if (arrName[i] == login) { 
+	alert(login + ', Вы успешно вошли!'); 
+	break; 
+	} else if ((i == arrName.length - 1) && (arrName[i] != login)) { 
+	alert('Логин не найден'); 
+	} 
+}
