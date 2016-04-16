@@ -20,7 +20,6 @@ name = prompt ('Введите свое имя');
 
 for (var i = 0; i < 5; i++) {
 	if (name == arr[i]) {
-		var i = 0; i < arr.length; i++
 		alert (name + ', Вы успешно вошли');
 		break;
 		} else {
